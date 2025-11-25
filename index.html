@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TuBlogTech — Reseñas y guías de herramientas (IA & Smart Home)</title>
+  <meta name="description" content="Reseñas, comparativas y guías prácticas de herramientas de IA, gadgets para el hogar y productividad. Guías sin tener que mostrar tu cara." />
+  <meta name="keywords" content="IA, herramientas, reseñas, smart home, comparativas, guías, afiliados" />
+  <link rel="canonical" href="https://tublogtech.com/" />
+
+  <!-- Open Graph (mejora en Pinterest/FB/WA) -->
+  <meta property="og:site_name" content="TuBlogTech" />
+  <meta property="og:title" content="TuBlogTech — Reseñas y guías de IA & gadgets" />
+  <meta property="og:description" content="Reseñas y guías prácticas de herramientas de IA y smart home. Comparativas y mejores picks 2025." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://tublogtech.com/" />
+  <meta property="og:image" content="https://tublogtech.com/assets/og-image.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="TuBlogTech — Reseñas y guías de IA & gadgets" />
+  <meta name="twitter:description" content="Reseñas y guías prácticas de herramientas de IA y smart home." />
+  <meta name="twitter:image" content="https://tublogtech.com/assets/og-image.jpg" />
+
+  <!-- JSON-LD (structured data básico, mejora SEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "TuBlogTech",
+    "url": "https://tublogtech.com/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tublogtech.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0f1720;
+      --muted:#6b7280;
+      --accent:#1fb6ff; /* acento turquesa (cambiable) */
+      --card:#f8fafc;
+      --radius:12px;
+      --maxw:1100px;
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+    a{color:var(--accent); text-decoration:none}
+    header{
+      border-bottom:1px solid #eceff2;
+      background:linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.95));
+      position:sticky; top:0; z-index:40; backdrop-filter: blur(6px);
+    }
+    .container{max-width:var(--maxw); margin:0 auto; padding:28px 20px}
+    .nav{display:flex;align-items:center;gap:18px;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#e6f9ff, #dff3ff);
+      display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);
+      box-shadow:0 4px 14px rgba(31,182,255,0.08);
+      font-size:20px;
+    }
+    nav .links{display:flex;gap:14px;align-items:center}
+    .btn{
+      padding:10px 14px;border-radius:10px;background:var(--accent);color:white;font-weight:600;border:0;
+    }
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:start;padding:34px 0}
+    .hero h1{font-size:28px;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .search{
+      display:flex;gap:10px;background:var(--card);padding:10px;border-radius:12px;border:1px solid #eef2f6;
+    }
+    .search input{flex:1;border:0;padding:10px;background:transparent;outline:none}
+
+    /* grid posts */
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;padding:18px 0}
+    .card{background:white;border-radius:12px;padding:14px;border:1px solid #f2f4f7;box-shadow:0 6px 18px rgba(15,23,32,0.03)}
+    .thumb{height:180px;border-radius:10px;background-size:cover;background-position:center;margin-bottom:12px}
+    .meta{font-size:13px;color:var(--muted);margin-bottom:8px}
+    .card h3{margin:0 0 10px;font-size:18px}
+    .excerpt{color:var(--muted);font-size:14px;margin-bottom:12px}
+    .aff-cta{display:inline-block;padding:10px 12px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#0aa8ff);color:#fff;font-weight:700}
+
+    /* sidebar */
+    .sidebar{background:var(--card);padding:16px;border-radius:12px;border:1px solid #eef2f6}
+    .sidebar h4{margin:0 0 8px}
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:white;padding:8px 10px;border-radius:8px;font-size:13px;border:1px solid #f1f5f8}
+
+    footer{padding:28px 0;border-top:1px solid #eef2f6;margin-top:28px;color:var(--muted);font-size:14px}
+
+    /* article template */
+    .article{max-width:780px;margin:20px auto;padding:20px;background:white;border-radius:12px;border:1px solid #f1f5f8}
+    .article img{max-width:100%;border-radius:10px}
+    .article .byline{color:var(--muted);font-size:13px;margin-bottom:12px}
+    .pro-tip{background:linear-gradient(90deg,#fff7ed,#fff1df);padding:12px;border-radius:10px;border:1px solid #fde6c8;margin:18px 0}
+
+    /* responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;gap:14px}
+      .grid{grid-template-columns:1fr}
+      .nav .links{display:none}
+    }
+    @media (max-width:500px){
+      .container{padding:18px}
+      .logo{width:40px;height:40px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">TB</div>
+        <div>
+          <div style="font-weight:700">TuBlogTech</div>
+          <div style="font-size:13px;color:var(--muted)">Reseñas & guías 2025</div>
+        </div>
+      </div>
+
+      <nav>
+        <div class="links">
+          <a href="#">Inicio</a>
+          <a href="#">Reseñas</a>
+          <a href="#">Comparativas</a>
+          <a href="#">Guías</a>
+        </div>
+      </nav>
+      <button class="btn" onclick="location.href='#subscribe'">Suscribite</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Las mejores herramientas de IA y gadgets para tu día a día</h1>
+        <p>Reseñas honestas, comparativas y guías paso a paso que convertimos en recomendaciones prácticas. No hace falta mostrarse: guía completa y pasos de compra.</p>
+
+        <div class="search" role="search" aria-label="Buscar artículos">
+          <input type="search" placeholder="Buscar: 'mejor app de IA 2025', 'robot aspiradora'..." id="searchInput" />
+          <button class="btn" onclick="doSearch()">Buscar</button>
+        </div>
+
+        <!-- Lista de posts (ejemplo estático; reemplazar con CMS o generar dinámicamente) -->
+        <div class="grid" id="postsGrid" style="margin-top:18px;">
+          <!-- card 1 -->
+          <article class="card">
+            <div class="thumb" style="background-image:url('assets/thumb-ia.jpg')" aria-hidden="true"></div>
+            <div class="meta">Reseña · IA · 5 min</div>
+            <h3>Top 7 herramientas de IA para crear videos sin aparecer</h3>
+            <p class="excerpt">Cómo crear videos automatizados paso a paso y qué herramientas pagan mejor como afiliado.</p>
+            <a class="aff-cta" href="AFFILIATE_LINK_REPLACE" target="_blank" rel="nofollow noopener">Ver herramienta</a>
+          </article>
+
+          <!-- card 2 -->
+          <article class="card">
+            <div class="thumb" style="background-image:url('assets/thumb-home.jpg')" aria-hidden="true"></div>
+            <div class="meta">Gadgets · Smart Home · 6 min</div>
+            <h3>Los mejores gadgets para tener una casa más inteligente (sin gastar una fortuna)</h3>
+            <p class="excerpt">Selección de dispositivos que realmente mejoran tu día a día y convierten muy bien en Pinterest.</p>
+            <a class="aff-cta" href="AFFILIATE_LINK_REPLACE" target="_blank" rel="nofollow noopener">Ver productos</a>
+          </article>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" aria-label="Barra lateral">
+        <h4>Lo más buscado</h4>
+        <ul style="padding-left:18px;color:var(--muted);margin-top:8px">
+          <li><a href="#">Mejor app de IA gratis</a></li>
+          <li><a href="#">Robot aspiradora calidad/precio</a></li>
+          <li><a href="#">Apps para productividad 2025</a></li>
+        </ul>
+
+        <h4 style="margin-top:16px">Categorías</h4>
+        <div class="tags" style="margin-top:8px">
+          <div class="tag">IA</div>
+          <div class="tag">Smart Home</div>
+          <div class="tag">Productividad</div>
+          <div class="tag">Reseñas</div>
+        </div>
+
+        <div style="margin-top:18px">
+          <h4>Suscribite</h4>
+          <p style="color:var(--muted);font-size:14px">Recibí guías y ofertas exclusivas por mail.</p>
+          <form id="subscribe" onsubmit="event.preventDefault(); alert('Gracias! revisá tu mail.');">
+            <input type="email" placeholder="tu@email.com" required style="width:100%;padding:10px;border-radius:8px;border:1px solid #eef2f6;margin-bottom:8px" />
+            <button class="btn" style="width:100%">Quiero suscribirme</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+
+    <!-- EJEMPLO DE ARTÍCULO (plantilla) -->
+    <section class="article" id="exampleArticle" style="display:block">
+      <h2>Ejemplo: Cómo elegir la mejor herramienta de IA para crear contenido (2025)</h2>
+      <div class="byline">Por TuBlogTech · Publicado: 1 de enero de 2025 · 7 min de lectura</div>
+      <img src="assets/article-ia.jpg" alt="imagen herramienta IA" />
+      <p class="excerpt">En esta guía te explico en lenguaje simple cómo elegir una herramienta de IA según tu necesidad, y te dejo las mejores opciones con links de afiliado.</p>
+
+      <div class="pro-tip"><strong>Pro tip:</strong> si no querés aparecer en videos, buscá herramientas que permitan exportar subtítulos y generar voz en off automática.</div>
+
+      <h3>1) ¿Qué buscás: automatizar o crear?</h3>
+      <p>Explicación breve... (reemplazá con tu redacción).</p>
+
+      <h3>2) Recomendaciones rápidas</h3>
+      <ul>
+        <li><strong>Tool A</strong> — Ideal para crear videos. <a href="AFFILIATE_LINK_REPLACE" target="_blank" rel="nofollow noopener">Probar Tool A</a></li>
+        <li><strong>Tool B</strong> — Buena para generar guiones y subtítulos. <a href="AFFILIATE_LINK_REPLACE" target="_blank" rel="nofollow noopener">Ir a Tool B</a></li>
+      </ul>
+
+      <p style="color:var(--muted)">⚠ Reemplazá todos los enlaces AFFILIATE_LINK_REPLACE por tus enlaces de afiliado. Poné rel="nofollow noopener" por seguridad/SEO.</p>
+    </section>
+
+    <footer>
+      <div style="max-width:var(--maxw);margin:0 auto;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap">
+        <div>© TuBlogTech 2025 · Hecho con cariño</div>
+        <div style="color:var(--muted);font-size:13px">Política de privacidad · Aviso legal</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Simple search demo (sólo ejemplo)
+    function doSearch(){
+      const q = document.getElementById('searchInput').value.trim();
+      if(!q) { alert('Escribí algo para buscar.'); return; }
+      // En un CMS: redirigir a /?s=q o a ruta de búsqueda
+      location.href = '/?s=' + encodeURIComponent(q);
+    }
+
+    // Small UX: lazy-load images (progressive enhancement)
+    document.addEventListener('DOMContentLoaded', function(){
+      const imgs = document.querySelectorAll('img[data-src]');
+      if('IntersectionObserver' in window){
+        const io = new IntersectionObserver((entries, obs) => {
+          entries.forEach(e => {
+            if(e.isIntersecting){
+              const img = e.target;
+              img.src = img.dataset.src;
+              obs.unobserve(img);
+            }
+          });
+        }, {rootMargin: "120px"});
+        imgs.forEach(i => io.observe(i));
+      } else {
+        imgs.forEach(i => i.src = i.dataset.src);
+      }
+    });
+  </script>
+</body>
+</html>
